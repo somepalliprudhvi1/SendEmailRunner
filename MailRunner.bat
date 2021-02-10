@@ -1,0 +1,1 @@
+"C:\Users\somep\AppData\Local\UiPath\UiPath.Agent.exe" -File "C:\Users\somep\Documents\pacakges\SendEmailToVendor.1.0.8.nupkg"
