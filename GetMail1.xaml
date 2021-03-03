@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetMail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="7666,4814" sap2010:WorkflowViewState.IdRef="GetMail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetMail" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="7666,4514" sap2010:WorkflowViewState.IdRef="GetMail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -75,7 +75,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetMail" sap:VirtualizedContainerService.HintSize="7676,4649" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetMail" sap:VirtualizedContainerService.HintSize="7676,4349" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Emailid" />
     </Sequence.Variables>
@@ -85,13 +85,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[Emailid]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="7634,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\somep\Documents\UiPath\SendEmailToVendor\EmailBox.xlsx" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Emailid]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="7634,4430" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Emailid]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="7634,4130" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="7584,4281" sap2010:WorkflowViewState.IdRef="Sequence_32">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="7584,3982" sap2010:WorkflowViewState.IdRef="Sequence_32">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="password" />
               <Variable x:TypeArguments="x:String" Name="email" />
@@ -117,8 +117,8 @@
                 <InArgument x:TypeArguments="x:String">[row.Item(1).ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="7542,93" sap2010:WorkflowViewState.IdRef="LogMessage_40" Message="[&quot;------------------------------------&quot;+email]" />
-            <Sequence DisplayName="Sequence1" sap:VirtualizedContainerService.HintSize="7542,3856" sap2010:WorkflowViewState.IdRef="Sequence_58">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="7542,91" sap2010:WorkflowViewState.IdRef="LogMessage_40" Message="[&quot;------------------------------------&quot;+email]" />
+            <Sequence DisplayName="Sequence1" sap:VirtualizedContainerService.HintSize="7542,3559" sap2010:WorkflowViewState.IdRef="Sequence_58">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
                 <Variable x:TypeArguments="x:String" Name="body1" />
@@ -129,7 +129,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7500,292" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7500,288" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                 <TryCatch.Try>
                   <ui:GetIMAPMailMessages SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_2" MailFolder="Inbox" MarkAsRead="True" Messages="[messages]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="5000" />
                 </TryCatch.Try>
@@ -150,7 +150,7 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7500,3432" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7500,3139" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,24 +158,24 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7462,3200" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7462,2911" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                     <TryCatch.Try>
-                      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="7424,2969" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[messages]">
+                      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="7424,2684" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[messages]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="snm:MailMessage">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="7388,2834" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="7388,2550" sap2010:WorkflowViewState.IdRef="Sequence_57">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7346,2742" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="7346,2458" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                 <TryCatch.Try>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="7308,2510" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="5406,2230" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="messageSucess" />
                                     </Sequence.Variables>
@@ -185,7 +185,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="7266,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                    <Assign sap:VirtualizedContainerService.HintSize="5364,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[body1]</OutArgument>
                                       </Assign.To>
@@ -193,9 +193,9 @@
                                         <InArgument x:TypeArguments="x:String">[mail.Body.ToString]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <If Condition="[mail.Headers(&quot;HTMLBody&quot;).ToString.Contains(&quot;Remove/unsubscribe&quot;)]" sap:VirtualizedContainerService.HintSize="7266,2318" sap2010:WorkflowViewState.IdRef="If_33">
+                                    <If Condition="[mail.Headers(&quot;HTMLBody&quot;).ToString.Contains(&quot;Remove/unsubscribe&quot;)]" sap:VirtualizedContainerService.HintSize="5364,2038" sap2010:WorkflowViewState.IdRef="If_33">
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="1625,1897" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="1625,1890" sap2010:WorkflowViewState.IdRef="Sequence_38">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="x:String" Name="emailboday" />
                                             <Variable x:TypeArguments="x:String" Name="input_str" />
@@ -206,7 +206,7 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1583,93" sap2010:WorkflowViewState.IdRef="LogMessage_43" Message="[&quot;3&quot;]" />
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1583,91" sap2010:WorkflowViewState.IdRef="LogMessage_43" Message="[&quot;3&quot;]" />
                                           <Assign sap:VirtualizedContainerService.HintSize="1583,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:String">[emailboday]</OutArgument>
@@ -224,31 +224,31 @@
                                             </Assign.Value>
                                           </Assign>
                                           <ui:Matches BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)*" sap:VirtualizedContainerService.HintSize="1583,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[input_str]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;Any (0 or more)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)*" RegexOption="IgnoreCase" Result="[Matched_Numb]" />
-                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1583,1373" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Matched_Numb]">
+                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1583,1368" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Matched_Numb]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1547,1238" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1547,1234" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <If Condition="[item.ToString.Contains(&quot;=&quot;)]" sap:VirtualizedContainerService.HintSize="1505,1146" sap2010:WorkflowViewState.IdRef="If_20">
+                                                  <If Condition="[item.ToString.Contains(&quot;=&quot;)]" sap:VirtualizedContainerService.HintSize="1505,1142" sap2010:WorkflowViewState.IdRef="If_20">
                                                     <If.Then>
                                                       <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
                                                     </If.Then>
                                                     <If.Else>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="1260,996" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="1260,994" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,842" sap2010:WorkflowViewState.IdRef="If_19">
+                                                        <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,840" sap2010:WorkflowViewState.IdRef="If_19">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,7 +277,7 @@
                                                             </Sequence>
                                                           </If.Then>
                                                           <If.Else>
-                                                            <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)Or mail.Subject.ToLower.Contains(&quot;c#&quot;)]" sap:VirtualizedContainerService.HintSize="797,522" sap2010:WorkflowViewState.IdRef="If_18">
+                                                            <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)Or mail.Subject.ToLower.Contains(&quot;c#&quot;)]" sap:VirtualizedContainerService.HintSize="797,520" sap2010:WorkflowViewState.IdRef="If_18">
                                                               <If.Then>
                                                                 <Sequence sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                                   <sap:WorkflowViewStateService.ViewState>
@@ -317,133 +317,150 @@
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="5596,2168" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="3694,1689" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[mail.Headers(&quot;HTMLBody&quot;).ToString.Contains(&quot;googlegroups&quot;)]" sap:VirtualizedContainerService.HintSize="5554,2076" sap2010:WorkflowViewState.IdRef="If_32">
+                                          <If Condition="[mail.Headers(&quot;HTMLBody&quot;).ToString.Contains(&quot;googlegroups&quot;)]" sap:VirtualizedContainerService.HintSize="3652,1597" sap2010:WorkflowViewState.IdRef="If_32">
                                             <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="2523,1926" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="621,331" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[mail.to.ToString.Contains(&quot;undissclosed&quot;) or mail.bcc.ToString.Contains(&quot;googlegroups&quot;)]" sap:VirtualizedContainerService.HintSize="2481,1834" sap2010:WorkflowViewState.IdRef="If_25">
+                                                <If Condition="[mail.to.ToString.Contains(&quot;undissclosed&quot;) or mail.bcc.ToString.Contains(&quot;googlegroups&quot;)]" sap:VirtualizedContainerService.HintSize="579,239" sap2010:WorkflowViewState.IdRef="If_25">
                                                   <If.Then>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_48" Message="[&quot;ignored email for s1 From&quot;+mail.from.ToString+&quot;-----+Subject : &quot;+mail.subject.ToString]" />
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_48" Message="[&quot;ignored email for s1 From&quot;+mail.from.ToString+&quot;-----+Subject : &quot;+mail.subject.ToString]" />
                                                   </If.Then>
                                                   <If.Else>
-                                                    <Sequence sap:VirtualizedContainerService.HintSize="2102,1684" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2060,93" sap2010:WorkflowViewState.IdRef="LogMessage_49" Message="[&quot;from email =------&quot;+mail.from.ToString]" />
-                                                      <If Condition="[mail.from.ToString.Contains(&quot;googlegroups&quot;) or mail.to.ToString.Contains(&quot;googlegroups&quot;)or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="2060,1459" sap2010:WorkflowViewState.IdRef="If_24">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <If.Then>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="1681,1309" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                    <ui:CommentOut DisplayName="Comment Out- google group emails " sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                                      <ui:CommentOut.Body>
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="2144,1756" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="2102,1664" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <If Condition="[mail.from.ToString.Contains(&quot;reply&quot;) or mail.from.ToString.Contains(&quot;notify&quot;) or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="1639,1217" sap2010:WorkflowViewState.IdRef="If_23">
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2060,91" sap2010:WorkflowViewState.IdRef="LogMessage_49" Message="[&quot;from email =------&quot;+mail.from.ToString]" />
+                                                            <If Condition="[mail.from.ToString.Contains(&quot;googlegroups&quot;) or mail.to.ToString.Contains(&quot;googlegroups&quot;)or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="2060,1441" sap2010:WorkflowViewState.IdRef="If_24">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
                                                               <If.Then>
-                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_50" Message="[&quot;ignoring no reply case or undisclosed case &quot;+mail.from.ToString]" />
-                                                              </If.Then>
-                                                              <If.Else>
-                                                                <Sequence sap:VirtualizedContainerService.HintSize="1260,1067" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                                                <Sequence sap:VirtualizedContainerService.HintSize="1681,1294" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1218,93" sap2010:WorkflowViewState.IdRef="LogMessage_51" Message="[&quot;sending to from email&quot;+mail.from.ToString]" />
-                                                                  <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,842" sap2010:WorkflowViewState.IdRef="If_22">
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                  <If Condition="[mail.from.ToString.Contains(&quot;reply&quot;) or mail.from.ToString.Contains(&quot;notify&quot;) or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="1639,1202" sap2010:WorkflowViewState.IdRef="If_23">
                                                                     <If.Then>
-                                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,692" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_50" Message="[&quot;ignoring no reply case or undisclosed case &quot;+mail.from.ToString]" />
+                                                                    </If.Then>
+                                                                    <If.Else>
+                                                                      <Sequence sap:VirtualizedContainerService.HintSize="1260,1055" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_52" Message="[&quot;sending email to sandhya: S3-&quot;+mail.to.ToString]" />
-                                                                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for Devops roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Sandhya&lt;br/&gt;sandhyacareerr@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="sandhyacareerr@gmail.com" EnableSSL="True" From="sandhyacareerr@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_20" IsBodyHtml="True" Name="Sandhya" Password="somepalli" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
-                                                                          <ui:SendMail.Files>
-                                                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                                          </ui:SendMail.Files>
-                                                                        </ui:SendMail>
-                                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_53" Message="[&quot;sending email to Nagi- S3:-&quot;+mail.to.ToString]" />
-                                                                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for Devops roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Nagi.&lt;br/&gt;nagireddy.devops@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="nagireddy.devops@gmail.com" EnableSSL="True" From="nagireddy.devops@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_21" IsBodyHtml="True" Name="Nagi" Password="ctrlshift1" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
-                                                                          <ui:SendMail.Files>
-                                                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                                          </ui:SendMail.Files>
-                                                                        </ui:SendMail>
+                                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1218,91" sap2010:WorkflowViewState.IdRef="LogMessage_51" Message="[&quot;sending to from email&quot;+mail.from.ToString]" />
+                                                                        <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,832" sap2010:WorkflowViewState.IdRef="If_22">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <If.Then>
+                                                                            <Sequence sap:VirtualizedContainerService.HintSize="376,684" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_52" Message="[&quot;sending email to sandhya: S3-&quot;+mail.to.ToString]" />
+                                                                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for Devops roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Sandhya&lt;br/&gt;sandhyacareerr@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="sandhyacareerr@gmail.com" EnableSSL="True" From="sandhyacareerr@gmail.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_20" IsBodyHtml="True" Name="Sandhya" Password="somepalli" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
+                                                                                <ui:SendMail.Files>
+                                                                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                                </ui:SendMail.Files>
+                                                                              </ui:SendMail>
+                                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_53" Message="[&quot;sending email to Nagi- S3:-&quot;+mail.to.ToString]" />
+                                                                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for Devops roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Nagi.&lt;br/&gt;nagireddy.devops@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="nagireddy.devops@gmail.com" EnableSSL="True" From="nagireddy.devops@gmail.com" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_21" IsBodyHtml="True" Name="Nagi" Password="ctrlshift1" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
+                                                                                <ui:SendMail.Files>
+                                                                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                                </ui:SendMail.Files>
+                                                                              </ui:SendMail>
+                                                                            </Sequence>
+                                                                          </If.Then>
+                                                                          <If.Else>
+                                                                            <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)]" sap:VirtualizedContainerService.HintSize="797,520" sap2010:WorkflowViewState.IdRef="If_21">
+                                                                              <If.Then>
+                                                                                <Sequence sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_54" Message="[&quot;sending email to prudhvi: S3-&quot;+mail.to.ToString]" />
+                                                                                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for .Net/Angular Developer roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Raj&lt;br/&gt;srajrsraj@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="srajrsraj@gmail.com" EnableSSL="True" From="srajrsraj@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_22" IsBodyHtml="True" Name="Raj" Password="somepalli123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
+                                                                                    <ui:SendMail.Files>
+                                                                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                                    </ui:SendMail.Files>
+                                                                                  </ui:SendMail>
+                                                                                </Sequence>
+                                                                              </If.Then>
+                                                                              <If.Else>
+                                                                                <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_55" Message="[&quot;Subject to ignore: &quot;+mail.Subject.ToString]" />
+                                                                                </Sequence>
+                                                                              </If.Else>
+                                                                            </If>
+                                                                          </If.Else>
+                                                                        </If>
                                                                       </Sequence>
-                                                                    </If.Then>
-                                                                    <If.Else>
-                                                                      <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)]" sap:VirtualizedContainerService.HintSize="797,522" sap2010:WorkflowViewState.IdRef="If_21">
-                                                                        <If.Then>
-                                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_54" Message="[&quot;sending email to prudhvi: S3-&quot;+mail.to.ToString]" />
-                                                                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for .Net/Angular Developer roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Raj&lt;br/&gt;srajrsraj@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="srajrsraj@gmail.com" EnableSSL="True" From="srajrsraj@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_22" IsBodyHtml="True" Name="Raj" Password="somepalli123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.to.ToString]">
-                                                                              <ui:SendMail.Files>
-                                                                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                                              </ui:SendMail.Files>
-                                                                            </ui:SendMail>
-                                                                          </Sequence>
-                                                                        </If.Then>
-                                                                        <If.Else>
-                                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_55" Message="[&quot;Subject to ignore: &quot;+mail.Subject.ToString]" />
-                                                                          </Sequence>
-                                                                        </If.Else>
-                                                                      </If>
                                                                     </If.Else>
                                                                   </If>
                                                                 </Sequence>
+                                                              </If.Then>
+                                                              <If.Else>
+                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_56" Message="[&quot;sending to cc and to emails:  To&quot;+mail.to.ToString+ &quot;------cc&quot;+mail.cc.ToString]" />
                                                               </If.Else>
                                                             </If>
                                                           </Sequence>
-                                                        </If.Then>
-                                                        <If.Else>
-                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_56" Message="[&quot;sending to cc and to emails:  To&quot;+mail.to.ToString+ &quot;------cc&quot;+mail.cc.ToString]" />
-                                                        </If.Else>
-                                                      </If>
-                                                    </Sequence>
+                                                        </Sequence>
+                                                      </ui:CommentOut.Body>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:CommentOut>
                                                   </If.Else>
                                                 </If>
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <If Condition="[mail.from.ToString.Contains(&quot;googlegroups&quot;) or mail.to.ToString.Contains(&quot;googlegroups&quot;)or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="2986,1459" sap2010:WorkflowViewState.IdRef="If_31">
+                                              <If Condition="[mail.from.ToString.Contains(&quot;googlegroups&quot;) or mail.to.ToString.Contains(&quot;googlegroups&quot;)or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="2986,1449" sap2010:WorkflowViewState.IdRef="If_31">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -451,25 +468,25 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <If.Then>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="1681,1309" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="1681,1301" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <If Condition="[mail.from.ToString.Contains(&quot;reply&quot;) or mail.from.ToString.Contains(&quot;notify&quot;) or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="1639,1217" sap2010:WorkflowViewState.IdRef="If_28">
+                                                    <If Condition="[mail.from.ToString.Contains(&quot;reply&quot;) or mail.from.ToString.Contains(&quot;notify&quot;) or mail.to.ToString.Contains(&quot;undisclosed&quot;)]" sap:VirtualizedContainerService.HintSize="1639,1209" sap2010:WorkflowViewState.IdRef="If_28">
                                                       <If.Then>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_57" Message="[&quot;ignoring no reply case or undisclosed case &quot;+mail.from.ToString]" />
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_57" Message="[&quot;ignoring no reply case or undisclosed case &quot;+mail.from.ToString]" />
                                                       </If.Then>
                                                       <If.Else>
-                                                        <Sequence sap:VirtualizedContainerService.HintSize="1260,1067" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="1260,1061" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1218,93" sap2010:WorkflowViewState.IdRef="LogMessage_58" Message="[&quot;sending to from email&quot;+mail.from.ToString]" />
-                                                          <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,842" sap2010:WorkflowViewState.IdRef="If_27">
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1218,91" sap2010:WorkflowViewState.IdRef="LogMessage_58" Message="[&quot;sending to from email&quot;+mail.from.ToString]" />
+                                                          <If Condition="[mail.Subject.ToLower.Contains(&quot;aws&quot;) Or mail.Subject.ToLower.Contains(&quot;devops&quot;) Or mail.Subject.ToLower.Contains(&quot;amazon&quot;) Or mail.Subject.ToLower.Contains(&quot;cloud&quot;) Or mail.Subject.ToLower.Contains(&quot;Python&quot;) Or mail.Subject.ToLower.Contains(&quot;Kubernetes&quot;) Or mail.Subject.ToLower.Contains(&quot;Amazon Web Services&quot;) Or mail.Subject.ToLower.Contains(&quot;Jenkins&quot;) Or mail.Subject.ToLower.Contains(&quot;Build/Release&quot;) or  mail.Subject.ToLower.Contains(&quot;Docker&quot;) or  mail.Subject.ToLower.Contains(&quot;urbancode&quot;)]" DisplayName="send email" sap:VirtualizedContainerService.HintSize="1218,838" sap2010:WorkflowViewState.IdRef="If_27">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -477,13 +494,13 @@
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <If.Then>
-                                                              <Sequence sap:VirtualizedContainerService.HintSize="376,692" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="376,690" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_59" Message="[&quot;sending email to sandhya: S1-&quot;+mail.from.ToString]" />
+                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_59" Message="[&quot;sending email to sandhya: S1-&quot;+mail.from.ToString]" />
                                                                 <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hello,&lt;br/&gt; &lt;br/&gt;I hope you doing great ....!&lt;br/&gt; I’m looking for Devops roles and I’m interested in below position.&lt;br/&gt; &lt;br/&gt;Please find my attached resume and let me know.&lt;br/&gt; &lt;br/&gt;Thanks &amp; regards,&lt;br/&gt;Sandhya&lt;br/&gt;sandhyacareerr@gmail.com&lt;br/&gt;&quot;+ mail.Headers(&quot;HTMLBody&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="sandhyacareerr@gmail.com" EnableSSL="True" From="sandhyacareerr@gmail.com" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendMail_23" IsBodyHtml="True" Name="Sandhya" Password="somepalli" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[mail.Subject.ToString]" To="[mail.from.ToString]">
                                                                   <ui:SendMail.Files>
                                                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
@@ -498,7 +515,7 @@
                                                               </Sequence>
                                                             </If.Then>
                                                             <If.Else>
-                                                              <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)]" sap:VirtualizedContainerService.HintSize="797,522" sap2010:WorkflowViewState.IdRef="If_26">
+                                                              <If Condition="[mail.Subject.ToLower.Contains(&quot;.Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp&quot;)Or mail.Subject.ToLower.Contains(&quot;Sql Server&quot;)Or mail.Subject.ToLower.Contains(&quot;Asp Net&quot;)Or mail.Subject.ToLower.Contains(&quot;Mvc&quot;)Or mail.Subject.ToLower.Contains(&quot;Entity Framework&quot;)Or mail.Subject.ToLower.Contains(&quot;Visual Studio&quot;)Or mail.Subject.ToLower.Contains(&quot;Azure&quot;)Or mail.Subject.ToLower.Contains(&quot;sql&quot;)  Or mail.Subject.ToLower.Contains(&quot;Dot net&quot;)Or mail.Subject.ToLower.Contains(&quot;VB.Net&quot;) Or mail.Subject.ToLower.Contains(&quot;angular&quot;)Or mail.Subject.ToLower.Contains(&quot;Front end&quot;)Or mail.Subject.ToLower.Contains(&quot;.Net/SSIS&quot;)]" sap:VirtualizedContainerService.HintSize="797,520" sap2010:WorkflowViewState.IdRef="If_26">
                                                                 <If.Then>
                                                                   <Sequence sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                                                     <sap:WorkflowViewStateService.ViewState>
